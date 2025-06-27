@@ -8,19 +8,16 @@ class Solution {
         int val=k;
 
         while(i>=0){
-            //System.out.println("...................");
             mod=val%10;
             val=val/10;
             int sum= mod+num[i];
             ans.add(sum%10);
             carray=sum/10;
             val+=carray;
-            //System.out.println("mod: "+mod+" :: val: "+val+" :: sum: "+sum+" ::carray: "+carray);
             i--;
         }
         
         while(val>0){
-            //System.out.println("--"+carray);
             ans.add(val%10);
             val/=10;
         }

@@ -4,7 +4,6 @@ class Solution {
     public List<List<String>> partition(String s) {
         ans=new ArrayList<>();
 
-        //char[] charArray=s.toCharArray();
         helper(new ArrayList<>(),s,0);
         return ans;
     }
@@ -16,9 +15,7 @@ class Solution {
         }
 
         for(int i=partIndex;i<s.length();i++){
-            //char[] newArray = Arrays.copyOfRange(charArray, partIndex, i+1);
-            String str=s.substring(partIndex,i+1); //newArray.toString();
-            //System.out.println("str: "+str);
+            String str=s.substring(partIndex,i+1); 
 
             if(isPalindrome(str)){
                 strList.add(str);

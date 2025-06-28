@@ -4,23 +4,24 @@ class Solution {
     public List<List<String>> partition(String s) {
         ans=new ArrayList<>();
 
-        helper(new ArrayList<>(),s,0);
+        helper(new ArrayList<>(),s);
         return ans;
     }
 
-    public void helper(List<String> strList, String s, int partIndex){
-        if(partIndex==s.length()){
-            ans.add(new ArrayList<>(strList));
+    public void helper(List<String> currentPartitions, String s){
+        if(s.length()==0){
+            ans.add(new ArrayList<>(currentPartitions));
             return;
         }
 
-        for(int i=partIndex;i<s.length();i++){
-            String str=s.substring(partIndex,i+1); 
+        for(int partition=1;partition<=s.length();partition++){
+            String prefix=s.substring(0,partition); 
+            String remaining=s.substring(partition); 
 
-            if(isPalindrome(str)){
-                strList.add(str);
-                helper(strList,s,i+1);
-                strList.removeLast();
+            if(isPalindrome(prefix)){
+                currentPartitions.add(prefix);
+                helper(currentPartitions,remaining);
+                currentPartitions.removeLast();
             }
         }
     }

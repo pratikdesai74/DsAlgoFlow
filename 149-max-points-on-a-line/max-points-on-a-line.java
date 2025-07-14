@@ -15,10 +15,12 @@ class Solution {
                     //slope=points[j][0];
                     slope=-999999.0;
                 }
-                else if(yDiff == 0){
-                    slope=points[j][1];
-                }
+                // else if(yDiff == 0){
+                //     slope=points[j][1];
+               // }
                 else slope=yDiff/xDiff;
+
+                if(slope == -0.0) slope = 0.0;
 
                 //System.out.println("i: "+i+"and j: "+j+":: slope:"+slope);
                 slopeFrequency.put(slope,slopeFrequency.getOrDefault(slope,0)+1);

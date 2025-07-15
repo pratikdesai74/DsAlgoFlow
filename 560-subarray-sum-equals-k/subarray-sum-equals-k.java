@@ -7,16 +7,15 @@ class Solution {
         runningSumFrequency.put(0,1);
 
         for(int num:nums){
-
             sum+=num;
             int runningSumMatchingKey = sum-k; 
-            // int frequency = runningSumFrequency.containsKey(runningSumMatchingKey);
-
+            
             if(runningSumFrequency.containsKey(runningSumMatchingKey)){
                countOfSubarray+= runningSumFrequency.get(runningSumMatchingKey);
             }
 
             runningSumFrequency.put(sum,runningSumFrequency.getOrDefault(sum,0)+1);
+
         }
 
         return countOfSubarray;

@@ -11,19 +11,19 @@ class Solution {
             int diff=nums[right]-nums[left];
 
             if(left==right || diff<k){
-                right++;
+                right+=1;
             }
             else if(diff>k){
-                left++;
+                left+=1;
             }
             else{
-                uniquePairCount++;
-                left++;
-                right++;
+                uniquePairCount+=1;
+                left+=1;
+                right+=1;
 
                 //skipping the duplicates
                 while(right<n && nums[right]==nums[right-1]){
-                    right++;
+                    right+=1;
                 }
             }
         }

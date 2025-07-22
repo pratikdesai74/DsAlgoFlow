@@ -10,7 +10,6 @@ class Solution {
                 l++;
             }
             uniqueChars.add(s.charAt(r));
-            
             longestSubstringLength=Math.max(longestSubstringLength,r-l+1);
             r++;
         }

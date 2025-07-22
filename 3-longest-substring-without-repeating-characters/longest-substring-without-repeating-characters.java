@@ -1,3 +1,4 @@
+// Two pointer(Variable sliding window) & Hashing
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         Set<Character> uniqueChars= new HashSet<>();

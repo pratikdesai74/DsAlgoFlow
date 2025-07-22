@@ -5,12 +5,16 @@ class Solution {
         int l=0,r=0;
         
         while(r <s.length()){
+            boolean isUnique=true;
             while(uniqueChars.contains(s.charAt(r))){
                 uniqueChars.remove(s.charAt(l));
                 l++;
+                isUnique=false;
             }
             uniqueChars.add(s.charAt(r));
-            longestSubstringLength=Math.max(longestSubstringLength,r-l+1);
+            
+            if(isUnique)
+                longestSubstringLength=Math.max(longestSubstringLength,r-l+1);
             r++;
         }
 

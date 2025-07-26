@@ -22,13 +22,17 @@ public class Solution {
             slow=slow.next;
 
             if(fast==slow){
-                ListNode e=head;
+                // as it has loop creating new pointer staring from head
+                ListNode entry=head;
 
-                while(e!=slow){
-                    e=e.next;
+                // we will shift both slow pointer and entry pointer by 1 node from their
+                // current position until they meet
+                // that meeting position node is the where the cycle started
+                while(entry!=slow){
+                    entry=entry.next;
                     slow=slow.next;
                 }
-                return e;
+                return entry;
             }
         }
 

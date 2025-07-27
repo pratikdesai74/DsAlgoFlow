@@ -8,23 +8,23 @@ class MyQueue {
     
     public void push(int x) {
         while(!stkMain.empty()){
-            int temp= stkMain.peek();
+            int topElement= stkMain.peek();
             stkMain.pop();
-            stkSupport.push(temp);
+            stkSupport.push(topElement);
         }
         stkMain.push(x);
 
         while(!stkSupport.empty()){
-            int temp= stkSupport.peek();
+            int topElement= stkSupport.peek();
             stkSupport.pop();
-            stkMain.push(temp);
+            stkMain.push(topElement);
         }
     }
     
     public int pop() {
-        int temp= stkMain.peek();
+        int topElement= stkMain.peek();
         stkMain.pop();
-        return temp;
+        return topElement;
     }
     
     public int peek() {

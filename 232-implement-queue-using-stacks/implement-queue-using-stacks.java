@@ -37,7 +37,7 @@ class MyQueue {
     }
 }
 
-//method 2:  maintin queue like order while pushing the element (our approach)
+//method 2(our approach):  maintin queue like order while pushing the element 
 // class MyQueue {
 //     public Stack<Integer> stkMain;
 //     public Stack<Integer> stkSupport;

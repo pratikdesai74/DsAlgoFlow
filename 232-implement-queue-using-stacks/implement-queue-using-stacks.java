@@ -22,9 +22,7 @@ class MyQueue {
     }
     
     public int pop() {
-        int topElement= stkMain.peek();
-        stkMain.pop();
-        return topElement;
+        return stkMain.pop();
     }
     
     public int peek() {

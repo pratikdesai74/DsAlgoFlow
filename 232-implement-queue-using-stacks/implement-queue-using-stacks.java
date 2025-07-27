@@ -1,6 +1,6 @@
-//method 1(teachers approach):  push always in input queue and for pop/peek use output queue 
-//if output queue is empty while peek/pop, (ulti bottel) push all elelments till now
-//in input queue into output queue and the do peek /pop 
+//Method 1(teachers approach):  push always in Input Stack and for pop/peek use Output Stack 
+//if Output Stack is empty while peek/pop, (Ulti Bottle) push all elelments 
+//from Input Stack(till now present) into Output Stack and the do peek /pop 
 class MyQueue {
     public Stack<Integer> output;
     public Stack<Integer> input;
@@ -37,7 +37,7 @@ class MyQueue {
     }
 }
 
-//method 2(our approach):  maintin queue like order while pushing the element 
+//Method 2(our approach):  Maintain queue like order while pushing the element 
 // class MyQueue {
 //     public Stack<Integer> stkMain;
 //     public Stack<Integer> stkSupport;

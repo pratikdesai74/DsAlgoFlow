@@ -1,27 +1,23 @@
 class Solution {
     public boolean isValid(String s) {
-        int n=s.length();
-        if(n%2 !=0)
-            return false;
+        int n= s.length();
+        Map<Character,Character> map=new HashMap<>();
 
-        Map<Character,Character> mapOfBrackets=new HashMap<>();
-        mapOfBrackets.put(')','(');
-        mapOfBrackets.put('}','{');
-        mapOfBrackets.put(']','[');
+        map.put('(',')');
+        map.put('{','}');
+        map.put('[',']');
 
-        Stack<Character> stackOfBrackets=new Stack<>();
+        Stack<Character> stk=new Stack<>();
 
         for(int i=0;i<n;i++){
             char ch=s.charAt(i);
 
-            if(!mapOfBrackets.containsKey(ch)){
-                // we received opening bracket
-                stackOfBrackets.push(ch);
+            if(map.containsKey(ch)){
+                stk.push(ch);
             }
             else{
-                // we received closing bracket
-                if(stackOfBrackets.size()>0 && stackOfBrackets.peek() == mapOfBrackets.get(ch)){
-                    stackOfBrackets.pop();
+                if(!stk.empty() && ch == map.get(stk.peek())){
+                    stk.pop();
                 }
                 else{
                     return false;
@@ -29,6 +25,6 @@ class Solution {
             }
         }
 
-        return stackOfBrackets.size()==0;
+        return stk.empty();
     }
 }

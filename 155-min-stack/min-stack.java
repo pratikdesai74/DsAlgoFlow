@@ -6,7 +6,7 @@ class MinStack {
     }
     
     public void push(int val) {
-        List<Integer> list=new ArrayList<>();
+        List<Integer> list=new ArrayList<>(2);
         list.add(val);
 
         if(stack.empty()){

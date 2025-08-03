@@ -1,23 +1,22 @@
 class MinStack {
-    Stack<List<Integer>> stack;
+    Stack<Pair<Integer,Integer>> stack;
 
     public MinStack() {
        stack=new Stack<>(); 
     }
     
     public void push(int val) {
-        List<Integer> list=new ArrayList<>(2);
-        list.add(val);
-
+        //List<Integer> list=new ArrayList<>(2);
+        Pair<Integer,Integer> pair;
         if(stack.empty()){
-            list.add(val);
+            pair=new Pair<>(val,val);
         }
         else{
-            int minVal= Math.min(val,stack.peek().get(1));
-            list.add(minVal);
+            int minVal= Math.min(val,stack.peek().getValue());
+            pair=new Pair<>(val,minVal);
         }
 
-        stack.push(list);
+        stack.push(pair);
     }
     
     public void pop() {
@@ -25,11 +24,11 @@ class MinStack {
     }
     
     public int top() {
-        return stack.peek().get(0);
+        return stack.peek().getKey();
     }
     
     public int getMin() {
-        return stack.peek().get(1);
+        return stack.peek().getValue();
     }
 }
 

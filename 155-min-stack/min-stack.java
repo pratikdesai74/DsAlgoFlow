@@ -6,7 +6,6 @@ class MinStack {
     }
     
     public void push(int val) {
-        //List<Integer> list=new ArrayList<>(2);
         Pair<Integer,Integer> pair;
         if(stack.empty()){
             pair=new Pair<>(val,val);

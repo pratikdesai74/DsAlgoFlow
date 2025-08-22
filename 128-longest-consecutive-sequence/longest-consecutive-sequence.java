@@ -7,11 +7,11 @@ class Solution {
             set.add(num);
         }
 
-        for(int num:set){
+        for(int val:set){
             
-            if(!set.contains(num-1)){
+            if(!set.contains(val-1)){
                 int length=1;
-                while(set.contains(num+length)){
+                while(set.contains(val+length)){
                     length++; 
                 }
 

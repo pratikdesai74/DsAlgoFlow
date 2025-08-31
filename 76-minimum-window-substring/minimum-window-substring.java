@@ -9,12 +9,12 @@ class Solution {
             map.put(ch,map.getOrDefault(ch,0)+1);
         } 
 
-        int l=0,r=0;
+        int left=0, right=0;
         int count=map.size();
         String minLengthSubString="";
 
-        while(r<s.length()){
-            char chr=s.charAt(r);
+        while(right<s.length()){
+            char chr=s.charAt(right);
             if(map.containsKey(chr)){
                 map.put(chr,map.get(chr)-1);
                 if(map.get(chr)==0){
@@ -24,28 +24,28 @@ class Solution {
             
             if(count==0){
                 
-                while(l<=r){
-                    char ch=s.charAt(l);
+                while(left <= right){
+                    char ch=s.charAt(left);
 
                     if(map.containsKey(ch)){
                         if(map.get(ch)+1 <=0){
                             map.put(ch,map.get(ch)+1);
-                            l++;
+                            left++;
                         }
                         else
                             break;
                     }
                     else{
-                        l++;
+                        left++;
                     }
                 }
 
-                String currString=s.substring(l,r+1);
+                String currString=s.substring(left,right+1);
                 if(minLengthSubString.isEmpty() || currString.length() < minLengthSubString.length())
                     minLengthSubString=currString;
 
             }
-            r++;
+            right++;
         }
 
         return minLengthSubString;

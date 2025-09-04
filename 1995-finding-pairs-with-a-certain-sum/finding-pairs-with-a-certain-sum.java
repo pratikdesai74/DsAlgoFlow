@@ -21,9 +21,8 @@ class FindSumPairs {
     public int count(int tot) {
         int pairCount=0;
         for(int num: numArr1){
-            if(map.containsKey(tot-num)){
-                pairCount+=map.get(tot-num);
-            }
+            int rest=tot-num;
+            pairCount+=map.getOrDefault(rest, 0);
         }
 
         return pairCount;

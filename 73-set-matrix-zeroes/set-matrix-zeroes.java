@@ -1,6 +1,4 @@
 class Solution {
-    Set<String> set=new HashSet<>();
-
     public void setZeroes(int[][] matrix) {
         int numOfRows=matrix.length;
         int numOfCols=matrix[0].length;

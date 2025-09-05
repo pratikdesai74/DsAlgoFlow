@@ -2,6 +2,7 @@ class Solution {
     public int maxPoints(int[][] points) {
         Map<Double,Integer> slopeFrequency;
         int maxPoints=0;
+
         for(int i=0;i<points.length-1;i++){
             slopeFrequency=new HashMap<>();
 
@@ -13,7 +14,8 @@ class Solution {
 
                 if(xDiff == 0){
                     //slope=points[j][0];
-                    slope=-999999.0;
+                    //slope=-999999.0;
+                    slope=Integer.MAX_VALUE;
                 }
                 // else if(yDiff == 0){
                 //     slope=points[j][1];

@@ -40,10 +40,9 @@ class Solution {
 
         int prev =1;
         int prev2prev=0;
-        int curr=0;
-
+        
         for(int i=2;i<=n;i++){    
-            curr=prev + prev2prev;
+            int curr=prev + prev2prev;
             prev2prev = prev;
             prev = curr;
         }

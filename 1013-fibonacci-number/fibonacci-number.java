@@ -1,5 +1,5 @@
 class Solution {
-    // //DP - Memoization
+    // 1. DP - Memoization
     // public int fib(int n) {
     //     int[] dp=new int[n+1];
     //     for(int i=0;i<=n;i++)
@@ -19,17 +19,35 @@ class Solution {
     //     return dp[n]=helper(n-1,dp) + helper(n-2,dp);       
     // }
 
-    //DP - Tabulation(real dp)
-    public int fib(int n) {
-        int[] dp=new int[n+1];
+    //2. DP - Tabulation(real dp)
+    // public int fib(int n) {
+    //     int[] dp=new int[n+1];
 
-        for(int i=0;i<=n;i++){
-            if(i==0 || i==1)
-                dp[i]=i;
-            else    
-                dp[i]=dp[i-1]+dp[i-2];
+    //     for(int i=0;i<=n;i++){
+    //         if(i==0 || i==1)
+    //             dp[i]=i;
+    //         else    
+    //             dp[i]=dp[i-1]+dp[i-2];
+    //     }
+
+    //     return dp[n];  
+    // }
+
+    //3. DP - State optimised(space optimised) - compitative programming
+    public int fib(int n) {
+        if(n<=1)
+            return n;
+            
+        int prev =1;
+        int prev2prev=0;
+        int curr=0;
+
+        for(int i=2;i<=n;i++){    
+            curr=prev + prev2prev;
+            prev2prev = prev;
+            prev = curr;
         }
 
-        return dp[n];  
+        return curr;  
     }
 }

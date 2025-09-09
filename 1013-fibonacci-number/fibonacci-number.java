@@ -37,7 +37,7 @@ class Solution {
     public int fib(int n) {
         if(n<=1)
             return n;
-            
+
         int prev =1;
         int prev2prev=0;
         int curr=0;
@@ -48,6 +48,6 @@ class Solution {
             prev = curr;
         }
 
-        return curr;  
+        return prev;  
     }
 }

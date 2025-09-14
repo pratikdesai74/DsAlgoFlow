@@ -18,6 +18,8 @@ class Solution {
             if pick : the total amount would be current value from nums + previous to previous value from dp (becasue if we pick amount from current index house we cannot rob adjesent house)
 
             in case of notPick: we can consider previos index dp value (as we arent considering value from current house, we can consider adjesent house amount)
+
+            and we are storing max(pick and notPick) as we need to maximise the robbery amount
             */
             int pick = nums[i] + dp[i-2];
             int notPick = dp[i-1];

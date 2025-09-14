@@ -13,6 +13,12 @@ class Solution {
         dp[1]= Math.max(dp[0],nums[1]);    
 
         for(int i=2; i<n; i++){
+            /*
+            There are 2 cases: either we can pick amount at current ith index or we notPick
+            if pick : the total amount would be current value from nums + previous to previous value from dp (becasue if we pick amount from current index house we cannot rob adjesent house)
+
+            in case of notPick: we can consider previos index dp value (as we arent considering value from current house, we can consider adjesent house amount)
+            */
             int pick = nums[i] + dp[i-2];
             int notPick = dp[i-1];
             dp[i]= Math.max(pick, notPick);

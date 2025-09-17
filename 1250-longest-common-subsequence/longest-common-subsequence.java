@@ -20,20 +20,20 @@ class Solution {
                 if(text1.charAt(i-1) == text2.charAt(j-1)){
                     /*
                     if current char matches from text1 with same index char from text2
-                    increase length of LCS by 1 in previous diagonal cell
+                    increase length of LCS by 1 in previous diagonal cell (as both the chars are matching, so take preevious state [i-1][j-1], here we are only considering 1 older state, which is previous state of i and j)
                     */
-                    dp[i][j]= 1+ dp[i-1][j-1]; // 1+ diagonally previous cell
+                    dp[i][j]= 1+ dp[i-1][j-1]; // 1(own contribution)+ diagonally previous cell
                 }
                 else{
                     /*
                     if current char from text1 dont match with same index char from text2
                     we wont increment the LCS length,
-                    but moving forword we need to decide(Maximum out of all 3 cases) and update the value
+                    but moving forword we need to decide (Maximum out of all 3 previous states) and update the value
                     */
 
-                    int case1= dp[i-1][j]; //top of current cell
-                    int case2= dp[i][j-1]; //left of current cell
-                    int case3= dp[i-1][j-1]; // diagonally previous cell
+                    int case1= dp[i-1][j]; //top of current cell (LCS value when i index was 1 less than current and j at same position)
+                    int case2= dp[i][j-1]; //left of current cell (LCS value when j index was 1 less than current and i at same position)
+                    int case3= dp[i-1][j-1]; // diagonally previous cell (LCS value when j index was 1 less than current and i at same position)
 
                     dp[i][j]=Math.max( Math.max(case1,case2),case3);
                 }

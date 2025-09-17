@@ -20,7 +20,7 @@ class Solution {
                 if(text1.charAt(i-1) == text2.charAt(j-1)){
                     /*
                     if current char matches from text1 with same index char from text2
-                    increase length of LCS by 1 in previous diagonal cell (as both the chars are matching, so take preevious state [i-1][j-1], here we are only considering 1 older state, which is previous state of i and j)
+                    increase length of LCS by 1 in previous diagonal cell (as both the chars are matching, so take preevious state [i-1][j-1], here we are only considering only 1 older state by reducing current length i by 1 and current length j by 1, because that will give us max value for lcs )
                     */
                     dp[i][j]= 1+ dp[i-1][j-1]; // 1(own contribution)+ diagonally previous cell
                 }
@@ -44,6 +44,6 @@ class Solution {
     }
 }
 
-//Good test case
-//bsbininm
-//jmjkbkjkv
+//Good test case - iterate through each cell and check
+//ace
+//abcde

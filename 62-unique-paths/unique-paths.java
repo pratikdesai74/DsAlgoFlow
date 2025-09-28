@@ -17,7 +17,9 @@ class Solution {
 
         for(int i=m-2; i>=0; i--){
             for(int j=n-2; j>=0; j--){
-                dp[i][j]= dp[i+1][j] + dp[i][j+1];
+                int numberOfWaysWhenMovingDown = dp[i+1][j];
+                int numberOfWaysWhenMovingRight = dp[i][j+1];
+                dp[i][j]= numberOfWaysWhenMovingDown + numberOfWaysWhenMovingRight;
             }
         }
 

@@ -13,7 +13,7 @@ class Solution {
         or vise versa, there wont be any common char 
         */
 
-        int[][] dp=new int[l1+1][l2+2];
+        int[][] dp=new int[l1+1][l2+1];
 
         for(int i=1; i<=l1; i++){
             for(int j=1; j<=l2; j++){
@@ -33,7 +33,7 @@ class Solution {
 
                     int case1= dp[i-1][j]; //top of current cell (LCS value when i index was 1 less than current and j at same position)
                     int case2= dp[i][j-1]; //left of current cell (LCS value when j index was 1 less than current and i at same position)
-                    int case3= dp[i-1][j-1]; // diagonally previous cell (LCS value when j index was 1 less than current and i at same position)
+                    int case3= dp[i-1][j-1]; // diagonally previous cell (LCS value when i index was 1 less than current and j index was 1 less than current)
 
                     dp[i][j]=Math.max( Math.max(case1,case2),case3);
                 }

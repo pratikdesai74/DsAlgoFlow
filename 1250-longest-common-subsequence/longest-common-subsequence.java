@@ -49,6 +49,6 @@ class Solution {
 //abcde
 
 /*
-similer question : which need to be solved on GFG
+similer question :Longest Repeating subsequence (LRS) - which need to be solved on GFG
 https://www.geeksforgeeks.org/problems/longest-repeating-subsequence2004/1
 */

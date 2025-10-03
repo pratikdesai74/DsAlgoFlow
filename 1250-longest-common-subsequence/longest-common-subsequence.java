@@ -47,3 +47,8 @@ class Solution {
 //Good test case - iterate through each cell and check
 //ace
 //abcde
+
+/*
+similer question : which need to be solved on GFG
+https://www.geeksforgeeks.org/problems/longest-repeating-subsequence2004/1
+*/

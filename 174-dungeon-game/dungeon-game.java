@@ -58,7 +58,7 @@ class Solution {
             1. As every dp cell represents the min health require to enter that cell
             2. We have to choose minimum of 2 options available : right cell and down cell
             3. Then need to minus current dungeon cell value from that minimum value.
-            4. which will give us the minimum health require for the current cell, but like we did for the base cases, if the value is -ve then we will consider bare minimum requuired value as 1
+            4. which will give us the minimum health require for the current cell, but like we did for the base cases, if the value is -ve then we will consider bare minimum health required to survive = 1
             
         */
         for(int i=m-2; i>=0; i--){

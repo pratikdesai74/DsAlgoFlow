@@ -1,4 +1,6 @@
 class Solution {
+//Method 1 : own method :: difficult takes dp of m*n
+
     // public int calculateMinimumHP(int[][] dungeon) {
     //     /*
     //     every cells number 
@@ -78,6 +80,8 @@ class Solution {
     //     return dp[0][0];
     // }
 
+
+//Method 2 : Sir's method :: easier and best to remember :takes dp of (m+1)*(n+1)
     public int calculateMinimumHP(int[][] dungeon) {
         /*
         every cells number 

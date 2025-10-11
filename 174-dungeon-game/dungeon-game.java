@@ -132,7 +132,8 @@ class Solution {
                 
                 int minimumHealthRequireToEnterThisCell = minimumHealthRequireToEnterThisCellExcludingCurrentCellNumber - dungeon[i][j];
 
-                dp[i][j] = minimumHealthRequireToEnterThisCell >0 ? minimumHealthRequireToEnterThisCell: 1;
+                //dp[i][j] = minimumHealthRequireToEnterThisCell >0 ? minimumHealthRequireToEnterThisCell: 1; ---> this or below line can be used
+                dp[i][j] = Math.max(1,minimumHealthRequireToEnterThisCell);
             }
         }
 

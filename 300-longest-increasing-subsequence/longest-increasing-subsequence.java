@@ -53,6 +53,8 @@ class Solution {
         4. so we will find the index of Lower bound number(i.e just greater than current number)
         5. and will replace new number in place of its lower bound number's index in lis List
         6. and if lower bound number present in lis list, that means we can directly add current number in the lis list, which will keep the increasing flow of numbers.
+
+        Note: got to know from the strivers video, the lis list is only temporary list, that doesnt give exact longest increasing subsequence
     */
 
     List<Integer> lis=new ArrayList<>();

@@ -14,6 +14,8 @@ class Solution {
     /* Why BFS is used for this question: Watch Strivers video on youtube
     1. As the rotton orange rottons all the neighbouring oranges at same distance.
     2. Also all rotton oranges starts rottoning neighbouring oranges at the same time(so its kind of level order traversal), so we cant use dfs. 
+    3. Whenever its asked to check the shortest distance, shortest path, minimum time .. such words always think
+    of BFS.
     */
     public int orangesRotting(int[][] grid) {
         int m= grid.length;

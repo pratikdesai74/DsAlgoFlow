@@ -15,23 +15,22 @@ class Solution {
         int n=grid[0].length;
 
         int[][] visited =new int[m][n];
-        Queue<int[]> q= new LinkedList<>();
+        Queue<Pair> q= new LinkedList<>();
 
         if(grid[0][0]==1 || grid[m-1][n-1]==1)
             return -1;
-            
-        q.add(new int[]{0,0,1});
+        q.add(new Pair(0,0,1));
         visited[0][0]=1;
-
         //regular bfs
 
         while(q.size()>0){
-            int[] arr=q.poll();
-            int i=arr[0];
-            int j=arr[1];
-            int steps=arr[2];
+            Pair p=q.poll();
+            int i=p.row;
+            int j=p.col;
+            int steps=p.steps;
 
             //System.out.println("i:"+i+" j:"+j+" :: steps: "+steps);
+
             if(i==m-1 && j==n-1)
                 return steps;
 
@@ -45,7 +44,7 @@ class Solution {
                 if(newX>=0 && newX<m && newY>=0 && newY<n
                  && visited[newX][newY]==0 && grid[newX][newY]==0){
                     visited[newX][newY]=1;
-                    q.add(new int[]{newX, newY,steps+1});
+                    q.add(new Pair(newX, newY,steps+1));
                  }
             }
         }

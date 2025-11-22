@@ -1,7 +1,10 @@
 /*
     Watch strivers video of this question.
-    1. we will wont consider 0's which are connected to the edges(in first and last columns and rows)
-    2. all other can be marked 'X'
+    1. '0' on the edges (1st and last rows and columns) cannot besurrounded by X ,as they are on edges.
+    2. So will check and mark all these cells with 'O' visited
+    3. So these 'O' which we just marked visited cannot be surrounded
+    4. All other 'O' which cant be reached from 'O' from the edges(i.e which arent marked visited)
+    can be marked as 'X' 
 */
 class Solution {
     public void dfs(int i,int j,int[][] visited, char[][] board, int[] x,int[] y, int rows, int cols){

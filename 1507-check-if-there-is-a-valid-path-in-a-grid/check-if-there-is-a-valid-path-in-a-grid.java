@@ -20,6 +20,12 @@ class Solution {
         if(i<0 || i>m-1 || j<0 || j>n-1)
             return false;
 
+        /*
+            1.for type 1: we can either go left("L") or right("R") : and it that set against "L" we have
+            saved next possible street types like 1,4,6
+            and its same for all other roades
+
+        */
         if(grid[i][j]==1){
             if(j>0 && connectionsAllowed.get("L").contains(grid[i][j-1]) && visited[i][j-1]==0)
                 if(dfs(i,j-1,m,n,visited,grid)) return true;

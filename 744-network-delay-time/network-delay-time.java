@@ -1,3 +1,19 @@
+/* Solved by myself:
+    Approach:
+    1. we need to traverse from a source node to every other node, so we can use dijekstra algo
+    2. also we might reach to any specific node through 2 routes, but we need to maintain min time require to   
+    reach that node, we will maintain timeArr which holds the minimum time require to reach that node.
+    3. we do reguler things:
+        i. create adjecency list 
+        ii. create a queue(why priority queue is not required as we are going to push step by step nodes,
+        like nodes on time 1 are pushed first, and as we go further we push 2nd layer of time 2 )
+        iii. we set time for source node as 0 and add one entry into the queue as source node and time as 0.
+        iv. for every entry in queue will check the neighbour nodes with their time and allow only when the 
+        effective time from source is less than current time in timeArr 
+    4. after this we will check if any node is not visited(if its value equqal to Integer.MAX_VALUE), 
+    then send -1
+    5. will find out max time out of all the nodes and return it
+*/
 class Pair{
     int node;
     int time;

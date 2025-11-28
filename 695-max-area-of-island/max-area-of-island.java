@@ -1,3 +1,7 @@
+/*
+ Same as no of islands, only instead of counting islands, we will maintain a counter for area of each island and
+ return maximum area
+*/
 class Solution {
     public static int area=0;
     public int maxAreaOfIsland(int[][] grid) {

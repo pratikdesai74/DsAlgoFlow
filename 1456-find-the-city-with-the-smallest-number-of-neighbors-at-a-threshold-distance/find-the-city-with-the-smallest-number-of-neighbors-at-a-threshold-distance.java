@@ -7,6 +7,11 @@ class Solution {
 
         int[][] dist= new int[n][n];
 
+        /* mark every node =Integer.MAX_VALUE, except diagonal nodes
+        - so that leter we can get minimum distance at that node 
+        - when i==j then keep as 0, that means distance of city i from same city i
+        - 
+        */
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 if(i!=j)
@@ -14,13 +19,9 @@ class Solution {
             }
         }
 
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                if(i!=j)
-                    dist[i][j]=Integer.MAX_VALUE;
-            }
-        }
-
+        /* 
+        - add edges in the distance matrix
+        */
         for(int[] edge:edges){
             int from=edge[0];
             int to=edge[1];
@@ -30,6 +31,9 @@ class Solution {
             dist[to][from]=distance;
         }
 
+        /* 
+        - floyed warshell algo, minimum of current distance and from kth node as stop
+        */
         for(int k=0;k<n;k++){
             for(int i=0;i<n;i++){
                 for(int j=0;j<n;j++){
@@ -41,6 +45,9 @@ class Solution {
             }
         }
 
+        /* 
+        - calculate city with mimum number of neighbouring cities within threshhold distnace
+        */
         int minNoOfCities=n;
         int cityNo=-1;
 

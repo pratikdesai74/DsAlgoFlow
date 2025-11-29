@@ -1,3 +1,9 @@
+/*  
+    1. The question asks us to find the cycle
+    2. This question can bes solved by using Disjoint Set : which can help us in detecting the cycle
+        (if 2 nodes have same ultimate parent), which we do by continusly normalisating the graph or flating
+    3. watch strivers disjoint set video in graph series    
+*/
 class DisjointSet{
     int noOfNode;
     int[] size;
